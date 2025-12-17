@@ -21,7 +21,7 @@ const pastors: Pastor[] = [
   {
     name: "Reverend Ilesanmi Gbenga",
     role: "General Overseer",
-    image: "/hero-bg.jpg",
+    image: "/pastor-general-overseer.jpg",
     id: "center",
   },
   {

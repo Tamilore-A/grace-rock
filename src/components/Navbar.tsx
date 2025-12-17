@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -122,18 +123,19 @@ export default function Navbar() {
         isScrolled ? 'h-[66px]' : 'h-[100px]'
       }`}>
         {/* Logo */}
-        <div className="flex items-center">
-          <div className={`rounded-full flex items-center justify-center transition-all duration-300 ${
-            isScrolled 
-              ? 'w-10 h-10 bg-white' 
-              : 'w-12 h-12 bg-transparent border-2 border-white'
-          }`}>
-               {/* Placeholder for Logo Icon */}
-               <span className={`font-bold transition-colors duration-300 ${
-                 isScrolled ? 'text-teal-500 text-xl' : 'text-white text-4xl'
-               }`}>✝</span>
+        <Link href="/" className="flex items-center">
+          <div className={`rounded-full bg-white overflow-hidden flex items-center justify-center transition-all duration-300 ${isScrolled ? 'w-10 h-10' : 'w-12 h-12'}`}>
+            <div className={`relative transition-all duration-300 ${isScrolled ? 'w-8 h-8' : 'w-10 h-10'}`}>
+              <Image
+                src="/logo.png"
+                alt="The Grace Rock Church"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </div>
-        </div>
+        </Link>
 
         {/* Navigation Links */}
         <div className="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
@@ -193,11 +195,16 @@ export default function Navbar() {
             {/* Header with Logo and Close Button */}
             <div className="flex items-center justify-between px-8 h-[100px]">
               {/* Logo */}
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-transparent border-2 border-white flex items-center justify-center">
-                  <span className="text-white text-4xl font-bold">✝</span>
+              <Link href="/" onClick={() => setIsMenuOpen(false)} className="flex items-center">
+                <div className="relative w-14 h-14">
+                  <Image
+                    src="/logo.png"
+                    alt="The Grace Rock Church"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
-              </div>
+              </Link>
 
               {/* Close Button */}
               <button 

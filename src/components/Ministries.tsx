@@ -13,32 +13,32 @@ const ministries: Ministry[] = [
   {
     title: "Community Outreach & Evangelism Ministry",
     lead: "Bro Frank Martins",
-    image: "/hero-bg.jpg",
+    image: "/ministry-outreach.png",
   },
   {
     title: "Children's Ministry",
     lead: "Sis Grace Adekunle",
-    image: "/hero-bg.jpg",
+    image: "/ministry-children.png",
   },
   {
     title: "Youth & Teen Ministry",
     lead: "Bro Onyeka Nzeribe",
-    image: "/hero-bg.jpg",
+    image: "/ministry-youth.png",
   },
   {
     title: "Women's Ministry",
     lead: "Deaconess Aramide Opawole",
-    image: "/hero-bg.jpg",
+    image: "/ministry-women.png",
   },
   {
     title: "Men's Fellowship Ministry",
     lead: "Elder Kasali Peter",
-    image: "/hero-bg.jpg",
+    image: "/ministry-men.png",
   },
   {
     title: "Music & Worship Ministry",
     lead: "Bro Samuel Oyeneye",
-    image: "/hero-bg.jpg",
+    image: "/ministry-worship.png",
   },
 ];
 

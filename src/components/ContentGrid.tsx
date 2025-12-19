@@ -95,59 +95,59 @@ export default function ContentGrid() {
           viewport={{ once: true, margin: '-50px' }}
         >
           {contentCards.map((card, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="relative h-[420px] md:h-[480px] lg:h-[520px] rounded-2xl overflow-hidden group cursor-pointer"
-            >
-              {/* Background Image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
-                style={{ backgroundImage: `url('${card.backgroundImage}')` }}
-              />
+            <Link key={index} href={card.actionLink} className="block">
+              <motion.div
+                variants={itemVariants}
+                className="relative h-[420px] md:h-[480px] lg:h-[520px] rounded-2xl overflow-hidden group cursor-pointer"
+              >
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
+                  style={{ backgroundImage: `url('${card.backgroundImage}')` }}
+                />
 
-              {/* Gradient Overlay */}
-              <div
-                className={`absolute inset-0 bg-linear-to-t ${card.gradient}`}
-              />
+                {/* Gradient Overlay */}
+                <div
+                  className={`absolute inset-0 bg-linear-to-t ${card.gradient}`}
+                />
 
-              {/* Dark overlay for better text readability */}
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
+                {/* Dark overlay for better text readability */}
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
 
-              {/* Content */}
-              <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between">
-                {/* Top Content */}
-                <div>
-                  <span className="text-xs font-bold tracking-wider text-[#E63946] uppercase">
-                    {card.label}
-                  </span>
-                  <h3 className="text-3xl md:text-4xl font-bold text-white mt-2 leading-tight">
-                    {card.title}
-                  </h3>
-                </div>
+                {/* Content */}
+                <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between">
+                  {/* Top Content */}
+                  <div>
+                    <span className="text-xs font-bold tracking-wider text-[#E63946] uppercase">
+                      {card.label}
+                    </span>
+                    <h3 className="text-3xl md:text-4xl font-bold text-white mt-2 leading-tight">
+                      {card.title}
+                    </h3>
+                  </div>
 
-                {/* Bottom Action Link */}
-                <Link
-                  href={card.actionLink}
-                  className="inline-flex items-center gap-2 text-sm font-bold text-white tracking-wide group/link"
-                >
-                  <span className="group-hover/link:underline">{card.actionText}</span>
-                  <svg
-                    className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
+                  {/* Bottom Action Link Style */}
+                  <div
+                    className="inline-flex items-center gap-2 text-sm font-bold text-white tracking-wide group/link"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </Link>
-              </div>
-            </motion.div>
+                    <span className="group-hover/link:underline">{card.actionText}</span>
+                    <svg
+                      className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </motion.div>
+            </Link>
           ))}
         </motion.div>
       </div>

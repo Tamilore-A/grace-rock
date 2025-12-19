@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, useState, useEffect } from 'react';
 import Globe from './Globe';
 import Ticker from './Ticker';
 import { motion, useScroll, useTransform, Variants } from 'framer-motion';
@@ -138,17 +138,25 @@ export default function Hero() {
   const mobileGlobeY = useTransform(scrollYProgress, [0, 1], ['0%', '-50%']);
   const mobileGlobeOpacity = useTransform(scrollYProgress, [0, 0.4], [0.6, 0]);
 
-  // Generate particles
-  const particles = useMemo(() => 
-    Array.from({ length: 15 }, (_, i) => <FloatingParticle key={i} index={i} />),
-  []);
+  // Handle client-side only rendering for random particles to prevent hydration mismatch
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Generate particles only after mount
+  const particles = useMemo(() => {
+    if (!mounted) return null;
+    return Array.from({ length: 15 }, (_, i) => <FloatingParticle key={i} index={i} />);
+  }, [mounted]);
 
   const titleWords = ['The', 'Grace', 'Rock', 'Church'];
 
   return (
     <section 
       ref={sectionRef}
-      className="relative w-full min-h-screen flex items-center overflow-hidden bg-slate-900 text-white"
+      className="relative w-full min-h-screen flex items-center overflow-x-hidden bg-slate-900 text-white"
     >
       {/* Cinematic Parallax Background */}
       <motion.div 
@@ -262,9 +270,9 @@ export default function Hero() {
 
       {/* Mobile/Tablet Globe - Cinematic scroll on right side */}
       <motion.div 
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-15 lg:hidden pointer-events-none"
-        initial={{ opacity: 0, x: 50, scale: 0.8 }}
-        animate={{ opacity: 0.6, x: 0, scale: 1 }}
+        className="absolute right-[-50px] top-1/2 -translate-y-1/2 z-15 lg:hidden pointer-events-none"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 0.6, scale: 1 }}
         transition={{ duration: 1.5, delay: 0.8, type: "spring" as const }}
         style={{ 
           y: mobileGlobeY, 

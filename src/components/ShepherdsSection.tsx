@@ -51,7 +51,7 @@ const cardVariants: Variants = {
 
 export default function ShepherdsSection() {
   return (
-    <section className="relative py-16 md:py-24 lg:py-32 bg-[#111111]">
+    <section className="relative py-16 md:py-24 lg:py-32 bg-[#111111] overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-20">

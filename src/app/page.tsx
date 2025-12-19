@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-[#1B1B1B]">
+    <main className="relative min-h-screen bg-[#1B1B1B] w-full">
       <Navbar />
       <Hero />
       <ContentGrid />

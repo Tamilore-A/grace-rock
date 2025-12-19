@@ -119,13 +119,13 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 text-white font-montserrat transition-all duration-300 bg-[#1B1B1B54] backdrop-blur-md border-white/10 ${
-        isScrolled ? 'h-[66px]' : 'h-[100px]'
+      <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-8 text-white font-montserrat transition-all duration-300 bg-[#1B1B1B54] backdrop-blur-md border-white/10 ${
+        isScrolled ? 'h-[60px] sm:h-[66px]' : 'h-[70px] sm:h-[80px] md:h-[100px]'
       }`}>
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <div className={`rounded-full bg-white overflow-hidden flex items-center justify-center transition-all duration-300 ${isScrolled ? 'w-10 h-10' : 'w-12 h-12'}`}>
-            <div className={`relative transition-all duration-300 ${isScrolled ? 'w-8 h-8' : 'w-10 h-10'}`}>
+          <div className={`rounded-full bg-white overflow-hidden flex items-center justify-center transition-all duration-300 ${isScrolled ? 'w-8 h-8 sm:w-10 sm:h-10' : 'w-10 h-10 sm:w-12 sm:h-12'}`}>
+            <div className={`relative transition-all duration-300 ${isScrolled ? 'w-6 h-6 sm:w-8 sm:h-8' : 'w-8 h-8 sm:w-10 sm:h-10'}`}>
               <Image
                 src="/logo.png"
                 alt="The Grace Rock Church"
@@ -193,16 +193,18 @@ export default function Navbar() {
             exit="closed"
           >
             {/* Header with Logo and Close Button */}
-            <div className="flex items-center justify-between px-8 h-[100px]">
+            <div className="flex items-center justify-between px-4 sm:px-6 md:px-8 h-[70px] sm:h-[80px] md:h-[100px]">
               {/* Logo */}
               <Link href="/" onClick={() => setIsMenuOpen(false)} className="flex items-center">
-                <div className="relative w-14 h-14">
-                  <Image
-                    src="/logo.png"
-                    alt="The Grace Rock Church"
-                    fill
-                    className="object-contain"
-                  />
+                <div className="rounded-full bg-white overflow-hidden flex items-center justify-center w-12 h-12">
+                  <div className="relative w-10 h-10">
+                    <Image
+                      src="/logo.png"
+                      alt="The Grace Rock Church"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
               </Link>
 
@@ -228,7 +230,7 @@ export default function Navbar() {
             </div>
 
             {/* Menu Content */}
-            <div className="px-8 md:px-12 lg:px-16 py-12 min-h-[calc(100vh-100px)] flex flex-col">
+            <div className="px-4 sm:px-6 md:px-12 lg:px-16 py-8 sm:py-12 min-h-[calc(100vh-70px)] sm:min-h-[calc(100vh-80px)] md:min-h-[calc(100vh-100px)] flex flex-col">
               <div className="flex flex-col lg:flex-row gap-16 lg:gap-32 flex-1">
                 
                 {/* Main Navigation Links - Left Side */}
@@ -243,7 +245,7 @@ export default function Navbar() {
                       <Link
                         href={link.href}
                         onClick={() => setIsMenuOpen(false)}
-                        className={`block text-4xl md:text-5xl lg:text-6xl font-black tracking-tight transition-colors leading-tight ${
+                        className={`block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight transition-colors leading-tight ${
                           isActive(link.href) 
                             ? 'text-[#34B752]' 
                             : 'text-white hover:text-[#34B752]'

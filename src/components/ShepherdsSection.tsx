@@ -12,7 +12,7 @@ const pastors: Pastor[] = [
   {
     name: "Pastor Mrs Popoola",
     role: "Residential Pastor",
-    image: "/pastor-residential.jpg",
+    image: "/pastor-mrs-popoola.jpg",
   },
   {
     name: "Pastor Funsho Popoola",
@@ -112,7 +112,7 @@ export default function ShepherdsSection() {
                 <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
                   {index === 1 && (
                     <span className="inline-block px-3 py-1 bg-[#34B752]/20 rounded-full text-xs text-[#34B752] font-semibold mb-2">
-                      General Overseer
+                      Lead Pastor
                     </span>
                   )}
                   <h3 className="text-white font-bold text-xl md:text-2xl mb-1">{pastor.name}</h3>

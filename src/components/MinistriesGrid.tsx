@@ -254,7 +254,7 @@ export default function MinistriesGrid() {
                 </h3>
                 <p className="text-[#00A88D] text-sm font-medium flex items-center gap-2">
                   <span className="w-6 h-6 rounded-full bg-[#00A88D]/10 flex items-center justify-center text-xs">👤</span>
-                  Lead by {ministry.lead}
+                  Led by {ministry.lead}
                 </p>
               </motion.div>
             </motion.div>

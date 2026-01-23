@@ -11,12 +11,12 @@ interface Pastor {
 const pastors: Pastor[] = [
   {
     name: "Pastor Mrs Popoola",
-    role: "Residential Pastor",
+    role: "Co-Lead Pastor",
     image: "/pastor-mrs-popoola.jpg",
   },
   {
     name: "Pastor Funsho Popoola",
-    role: "General Overseer",
+    role: "Lead Pastor",
     image: "/pastor-general-overseer.jpg",
   },
   {
@@ -110,11 +110,6 @@ export default function ShepherdsSection() {
                 
                 {/* Pastor Info */}
                 <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                  {index === 1 && (
-                    <span className="inline-block px-3 py-1 bg-[#34B752]/20 rounded-full text-xs text-[#34B752] font-semibold mb-2">
-                      Lead Pastor
-                    </span>
-                  )}
                   <h3 className="text-white font-bold text-xl md:text-2xl mb-1">{pastor.name}</h3>
                   <p className="text-[#34B752] text-sm font-medium">{pastor.role}</p>
                 </div>

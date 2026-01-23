@@ -77,9 +77,9 @@ const MinistryCard = ({
       
       <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
         <h3 className="text-xl md:text-[28px] font-bold leading-tight mb-2 md:mb-3">{ministry.title}</h3>
-        <p className="text-[#34B752] text-sm md:text-base font-medium">
+        {/* <p className="text-[#34B752] text-sm md:text-base font-medium">
           Lead by <span className="text-white">{ministry.lead}</span>
-        </p>
+        </p> */}
       </div>
     </motion.div>
   );

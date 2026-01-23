@@ -79,17 +79,22 @@ export default function AboutHero() {
         className="absolute inset-0 z-0"
         style={{ y: backgroundY }}
       >
-        {/* Multi-layer gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#0a0a0a] z-20"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/90 via-transparent to-[#0a0a0a]/90 z-20"></div>
-        <div className="absolute inset-0 bg-black/40 z-10"></div>
+        {/* Multi-layer cinematic gradient overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#0a0a0a]/30 to-[#0a0a0a] z-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/95 via-transparent to-[#0a0a0a]/80 z-20"></div>
+        {/* Warm accent glow from bottom right to complement the subject */}
+        <div className="absolute inset-0 bg-gradient-to-tl from-amber-900/20 via-transparent to-transparent z-20"></div>
+        {/* Subtle teal accent from top left for brand colors */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#00A88D]/10 via-transparent to-transparent z-20"></div>
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
         
-        {/* Main Background Image */}
+        {/* Main Background Image - Pastor Preaching */}
         <motion.div 
-          className="w-full h-[120%] bg-[url('/about-hero-congregation.png')] bg-cover bg-center"
-          initial={{ scale: 1.2 }}
+          className="w-full h-[120%] bg-cover bg-center"
+          style={{ backgroundImage: "url('/pastor-preaching-hero.png')" }}
+          initial={{ scale: 1.05 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
+          transition={{ duration: 2.5, ease: [0.16, 1, 0.3, 1] }}
         />
       </motion.div>
 

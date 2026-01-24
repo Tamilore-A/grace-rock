@@ -156,7 +156,7 @@ export default function Hero() {
   return (
     <section 
       ref={sectionRef}
-      className="relative w-full min-h-screen flex items-center overflow-x-hidden bg-slate-900 text-white"
+      className="relative w-full min-h-screen flex items-center overflow-hidden bg-slate-900 text-white"
     >
       {/* Cinematic Parallax Background */}
       <motion.div 
@@ -342,9 +342,11 @@ export default function Hero() {
         </svg>
       </motion.div>
 
-      <Ticker />
+      {/* Ticker - Positioned at bottom of section, outside parallax */}
+      <div className="absolute bottom-0 left-0 right-0 z-50">
+        <Ticker />
+      </div>
     </section>
   );
 }
-
 

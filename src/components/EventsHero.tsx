@@ -9,7 +9,7 @@ export default function EventsHero() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/60 z-10"></div>
         {/* Replace src with actual image path later */}
-        <div className="w-full h-full bg-[url('/hero-bg.jpg')] bg-cover bg-center opacity-50"></div>
+        <div className="w-full h-full bg-[url('/events-hero-bg.png')] bg-cover bg-[center_20%] md:bg-top"></div>
       </div>
 
       {/* Content */}
